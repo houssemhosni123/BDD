@@ -5,6 +5,9 @@ import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
+import { BDDComponent } from './bdd/bdd.component';
+import { AjouterProjetComponent } from './Projet/ajouter-projet/ajouter-projet.component';
+import { AfficherProjetComponent } from './Projet/afficher-projet/afficher-projet.component';
 
 const routes: Routes = [{
   path: '',
@@ -14,6 +17,17 @@ const routes: Routes = [{
       path: 'dashboard',
       component: ECommerceComponent,
     },
+    {
+      path: 'Projet',
+      loadChildren: () => import('./Projet/Projet.module').then(m => m.ProjetModule),
+    },
+    {
+      path: 'Behavior_Driven_Development',
+      component: BDDComponent,
+    },
+    {path: 'AjouterProjet',component: AjouterProjetComponent,data: { animation: 'layout' }},
+    {path: 'AfficherProjet',component: AfficherProjetComponent,data: { animation: 'layout' }},
+
     {
       path: 'iot-dashboard',
       component: DashboardComponent,
@@ -48,6 +62,7 @@ const routes: Routes = [{
       loadChildren: () => import('./maps/maps.module')
         .then(m => m.MapsModule),
     },
+    
     {
       path: 'charts',
       loadChildren: () => import('./charts/charts.module')

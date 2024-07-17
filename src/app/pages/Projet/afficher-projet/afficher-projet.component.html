@@ -1,0 +1,33 @@
+<div class="container mt-5">
+    <h2>Project List</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Project Name</th>
+          <th scope="col">Client</th>
+          <th scope="col">Project Manager</th>
+          <th scope="col">Description</th>
+          <th scope="col">Start Date</th>
+          <th scope="col">End Date</th>
+          <th scope="col">Type</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let projet of projets">
+          <td>{{ projet.nom_Projet }}</td>
+          <td>{{ projet.client }}</td>
+          <td>{{ projet.project_Manager }}</td>
+          <td>{{ projet.description_Projet }}</td>
+          <td>{{ projet.dateDebut_Projet | date }}</td>
+          <td>{{ projet.dateFin_Projet | date }}</td>
+          <td [ngClass]="getTypeClass(projet.type)">{{ projet.type }}</td>
+          <td>
+            <button class="btn btn-primary btn-sm" (click)="onUpdate(projet)">Update</button>
+            <button class="btn btn-danger btn-sm" (click)="deleteProjet(projet.idProjet)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

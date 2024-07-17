@@ -31,7 +31,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
       {
         title: 'Behavior-Driven Development (BDD)',
-        link: '/pages/agile/bdd',
+        link: '/pages/Behavior_Driven_Development',
       },
       {
         title: 'Continuous Integration (CI) Devops - Group 1',

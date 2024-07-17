@@ -7,6 +7,13 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { ECommerceModule } from './e-commerce/e-commerce.module';
 import { PagesRoutingModule } from './pages-routing.module';
 import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
+import { bddModule } from './bdd/bdd.module';
+import { ProjetModule } from './Projet/Projet.module';
+import { Routes } from '@angular/router';
+import { AjouterProjetComponent } from './Projet/ajouter-projet/ajouter-projet.component';
+const routes: Routes = [
+  {path: 'AjouterProjet',component: AjouterProjetComponent,data: { animation: 'layout' }}
+];
 
 @NgModule({
   imports: [
@@ -16,9 +23,12 @@ import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
     DashboardModule,
     ECommerceModule,
     MiscellaneousModule,
+    bddModule,
+    ProjetModule
   ],
   declarations: [
     PagesComponent,
+    
   ],
 })
 export class PagesModule {
